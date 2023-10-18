@@ -16,15 +16,8 @@ The main function in this repository is robot(context, question). Here’s how t
     model_name = 'bert-large-uncased-whole-word-masking-finetuned-squad'
     model = BertForQuestionAnswering.from_pretrained(model_name)
     tokenizer = BertTokenizer.from_pretrained(model_name)
-
-## Context of the story
-    story = """
-    ... Your story here ...
-    """
-
-## Question to ask about the story
-    question = "Your question here"
-
+    
+## Main Funciton
     def robot(context, question):
 
         # Tokenize the input text and question
@@ -45,7 +38,14 @@ The main function in this repository is robot(context, question). Here’s how t
         answer = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(inputs["input_ids"][0][answer_start:answer_end]))
     
         return answer
+        
+## Context of the story
+    story = """
+    ... Your story here ...
+    """
 
+## Question to ask about the story
+    question = "Your question here"
     answer = robot(story, question)
     print("Answer:", answer)
 
