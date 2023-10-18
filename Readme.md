@@ -9,21 +9,20 @@ This repository contains a simple question-answering system built with the BERT 
 # Usage
 The main function in this repository is robot(context, question). Here’s how to use it:
 
-from transformers import BertForQuestionAnswering, BertTokenizer
-
+    from transformers import BertForQuestionAnswering, BertTokenizer
     import torch
 
-# Load the pre-trained BERT model and tokenizer
+## Load the pre-trained BERT model and tokenizer
     model_name = 'bert-large-uncased-whole-word-masking-finetuned-squad'
     model = BertForQuestionAnswering.from_pretrained(model_name)
     tokenizer = BertTokenizer.from_pretrained(model_name)
 
-# Context of the story
+## Context of the story
     story = """
     ... Your story here ...
     """
 
-# Question to ask about the story
+## Question to ask about the story
     question = "Your question here"
 
     def robot(context, question):
@@ -53,10 +52,10 @@ from transformers import BertForQuestionAnswering, BertTokenizer
 Replace "Your story here" and "Your question here" with your own context and question. The robot() function will return an answer based on the context.
 
 Requirements
-Python 3.6 or later.
-PyTorch 1.0.0 or later.
-Transformers library from Hugging Face.
-Installation
+* Python 3.6 or later.
+* PyTorch 1.0.0 or later.
+* Transformers library from Hugging Face.
+## Installation
 You can install the required packages with pip:
 
     pip install torch transformers
